@@ -9,6 +9,7 @@ This is a starter template for [Learn Next.js](https://nextjs.org/learn).
 yarn add classnames   
 yarn add tailwindcss postcss-preset-env postcss-flexbugs-fixes   
 yarn add sass   
+yarn add gray-matter
 ```
 
 
