@@ -47,6 +47,15 @@ export default function Home({ allPostsData  }) {
           }
         </ul>
       </section>
+
+      <section>
+        <h2>ダイナミックルート</h2>
+        <ul>
+          <li><a href="http://localhost:3000/posts/ssg-ssr">http://localhost:3000/posts/ssg-ssr</a></li>
+          <li><a href="http://localhost:3000/posts/pre-rendering">http://localhost:3000/posts/pre-rendering</a></li>
+        </ul>
+      </section>
+
     </Layout>
   )
 }
