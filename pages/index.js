@@ -54,6 +54,12 @@ export default function Home({ allPostsData  }) {
         </ul>
       </section>
 
+      <section>
+        <h2>API 実装</h2>
+        <p>Hello</p>
+        <p><a href="http://localhost:3000/api/hello">http://localhost:3000/api/hello</a></p>
+      </section>
+
     </Layout>
   )
 }
