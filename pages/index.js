@@ -2,6 +2,8 @@ import Head from 'next/head'
 import Layout, { siteTitle } from '../components/layout'
 import utilStyles from '../styles/utils.module.css'
 import Alert from '../components/alert'
+import Link from 'next/link'
+import Date from '../components/date'
 
 import { getSortedPostsData } from '../lib/post'
 
@@ -39,20 +41,16 @@ export default function Home({ allPostsData  }) {
           {
             allPostsData .map( ({ id, date, title }) => (
               <li className={ utilStyles.listItem } key={ id }>
-                { title }<br />
-                { id }<br />
-                { date }
+                <Link href={`/posts/${id}`}>
+                  <a>{ title }</a>
+                </Link>
+                <br />
+                <small className={ utilStyles.lightText }>
+                  <Date dateString={ date } />
+                </small>
               </li>
             ))
           }
-        </ul>
-      </section>
-
-      <section>
-        <h2>ダイナミックルート</h2>
-        <ul>
-          <li><a href="http://localhost:3000/posts/ssg-ssr">http://localhost:3000/posts/ssg-ssr</a></li>
-          <li><a href="http://localhost:3000/posts/pre-rendering">http://localhost:3000/posts/pre-rendering</a></li>
         </ul>
       </section>
 
