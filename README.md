@@ -14,6 +14,12 @@ yarn add remark remark-html
 yarn add date-fns
 ```
 
+TypeScriptを使用する場合
+```
+yarn add --dev typescript @types/react @types/node
+```
+
+
 
 ## 実行
 ```
