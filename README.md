@@ -11,6 +11,7 @@ yarn add tailwindcss postcss-preset-env postcss-flexbugs-fixes
 yarn add sass   
 yarn add gray-matter
 yarn add remark remark-html
+yarn add date-fns
 ```
 
 
