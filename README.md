@@ -127,3 +127,54 @@ const customJestConfig = {
 // createJestConfig is exported this way to ensure that next/jest can load the Next.js config which is async
 module.exports = createJestConfig(customJestConfig)
 ```
+
+## Storybook の導入
+
+Storybook の追加
+
+```
+npx sb upgrade
+npx sb init --builder webpack5
+```
+
+立ち上げる
+
+```
+yarn storybook
+```
+
+Storybook での Post CSS のエラーが発生するので
+「Error: PostCSS plugin tailwindcss requires PostCSS 8.」
+@storybook/addon-postcss を導入（Storybook で Post CSS を使用出来るようにする addon？）
+
+```
+npx sb init --builder webpack5
+yarn add -D @storybook/addon-postcss
+```
+
+.storybook/main.js を編集
+
+```
+module.exports = {
+  stories: ['../src/**/*.stories.mdx', '../src/**/*.stories.@(js|jsx|ts|tsx)'],
+  addons: [
+    '@storybook/addon-links',
+    '@storybook/addon-essentials',
+    // Add everything below here
+    {
+      name: '@storybook/addon-postcss',
+      options: {
+        postcssLoaderOptions: {
+          implementation: require('postcss'),
+        },
+      },
+    },
+  ],
+}
+```
+
+再度 SStorybook を立ち上げる
+
+```
+yarn storybook
+```
