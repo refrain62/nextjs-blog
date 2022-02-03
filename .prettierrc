@@ -4,7 +4,7 @@
     {
       "files": "*.main.js",
       "options": {
-        "semi": true
+        "semi": false
       }
     },
     {
